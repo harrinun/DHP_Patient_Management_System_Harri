@@ -10,7 +10,7 @@ def calculate_age(date_of_birth):
     """
     Calculates a person's age given their date of birth.
     """
-    birth_date = dt.strtime(date_of_birth, "%d-%m-%Y")  # Convert the date string into a datetime object
+    birth_date = dt.strptime(date_of_birth, "%d-%m-%Y")  # Convert the date string into a datetime object
     today = dt.today()  # Get current date
     # Subtract birth year from current year and adjust if the birthday hasn't occurred yet this year
     age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
